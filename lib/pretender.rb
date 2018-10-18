@@ -49,7 +49,7 @@ module Pretender
           end
         end
 
-        impersonated_resource || send(true_method)
+        @user = impersonated_resource || send(true_method)
       end
 
       define_method :"impersonate_#{scope}" do |resource|
